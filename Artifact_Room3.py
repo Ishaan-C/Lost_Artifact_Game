@@ -27,9 +27,12 @@ class Room3:
                 continue
             else:
                 self.fl=True
-                print("Correct! You may proceed to the Final Room...\v")
-                Stage3=Room4(self.player)
-                Stage3.RRoom4()
+                break
+        
+        if self.fl==True:
+            print("Correct! You may proceed to the Final Room...\v")
+            Stage3=Room4(self.player)
+            Stage3.RRoom4()
         
         if self.fl==False:
             print("You failed!!")
@@ -50,14 +53,16 @@ class Room3:
         
         if a==3:
             sqr=int(math.sqrt(n))
-            if sqr<=36:
+            if sqr<=6:
                 print("The square root is less than or equal to 6")
+            else:
+                print("The square root is greater than 6")
                 
 
         if a==5:
             print("The last digit of the number is",(n%10))
-
         
+
 
 
 
