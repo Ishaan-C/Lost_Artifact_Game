@@ -22,7 +22,7 @@ class Room2:
         print("You go first. These are the stats of the Titan.")
         print("Name: Titan \nHealth: 200")
 
-        if input("Do you want to go to the shop?   Y/N\n") == "Y":
+        if input("Do you want to go to the shop?   Y/N\n").upper() == "Y":
             self.player.shop()
 
         while self.monster["health"] > 0:
@@ -30,7 +30,7 @@ class Room2:
             for i in range(len(self.player.inventory)):
                 if self.player.inventory[i] == "Magic Sword":
                     self.uo = input("Would you like to use the Magic Sword?   Y/N\t")
-                    if self.uo == "Y":
+                    if self.uo.upper() == "Y":
                         self.monster["health"] -= 300
                         print("Remaining health:",self.monster["health"])
                     else:
@@ -38,7 +38,7 @@ class Room2:
 
                 if self.player.inventory[i] == "Basic Sword":
                     self.uo = input("Would you like to use the Basic Sword?   Y/N\t")
-                    if self.uo == "Y":
+                    if self.uo.upper() == "Y":
                         self.monster["health"] -= 20
                         print("Remaining health:",self.monster["health"])
                     else:
@@ -46,7 +46,7 @@ class Room2:
 
                 if self.player.inventory[i] == "Health Potion":
                     self.uo = input("Would you like to use the Health Potion? Y/N\t")
-                    if self.uo == "Y":
+                    if self.uo.upper() == "Y":
                         self.player.heal()
                     else:
                         continue
@@ -64,14 +64,3 @@ class Room2:
         self.player.addCoins(1000)
         Stage3=Room3(self.player)
         Stage3.RRoom3()
-
-
-        
-        
-        
-        
-
-
-
-
-
