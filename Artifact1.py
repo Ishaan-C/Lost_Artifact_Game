@@ -1,4 +1,5 @@
 #This is a class to set up all functions associated with the game
+#This is a class to set up all functions associated with the game
 import sys
 class Artifact:
 
@@ -22,9 +23,12 @@ class Artifact:
 
     
     def spendCoins(self,price,item):
-        self.player["coins"]-=price
-        self.inventory.append(item)
-        print("Item succesfully bought. New balance: ",self.player["coins"])
+        if(self.player["coins"]>=price):
+            self.player["coins"]-=price
+            self.inventory.append(item)
+            print("Item succesfully bought. New balance: ",self.player["coins"])
+        else:
+            print("Insufficient coins")
 
 
     def take_damage(self, damage):
@@ -61,3 +65,5 @@ class Artifact:
             self.spendCoins(250,"Health Potion")
         else:
             print("Invalid Choice")
+
+
