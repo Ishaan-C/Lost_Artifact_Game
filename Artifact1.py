@@ -1,5 +1,4 @@
 #This is a class to set up all functions associated with the game
-#This is a class to set up all functions associated with the game
 import sys
 class Artifact:
 
@@ -65,5 +64,6 @@ class Artifact:
             self.spendCoins(250,"Health Potion")
         else:
             print("Invalid Choice")
+
 
 
